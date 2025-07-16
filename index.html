@@ -1,51 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Interaktiv Xarita</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-sA+z0pLFb2t1Yf5KULz8JBBi6CkCzD74x0DkM7fCytE="
-    crossorigin=""
-  />
-
-  <style>
-    #map {
-      height: 100vh; /* Ekranning butun balandligi */
-      width: 100%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #map{
+        margin-top: 10vh;
+        width:100%;
+        height:90vh;
+    }
+</style>
 <body>
-
-  <div id="map"></div>
-
-  <!-- Leaflet JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-o5hM1wZzVghxkREU1o1JvlFbNc7kJYquy8+0XjK0gsE="
-    crossorigin=""
-  ></script>
-
-  <script>
-    // Toshkent koordinatalari
-    var map = L.map('map').setView([41.3111, 69.2797], 13);
-
-    // Xarita fonini yuklash
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    // Marker qo‘shish
-    L.marker([41.3111, 69.2797])
-      .addTo(map)
-      .bindPopup('Toshkent markazi')
-      .openPopup();
-  </script>
-
+    <div id="map" ></div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>
+var map = L.map('map').setView([41.2995, 69.2401], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+</script>
 </html>
