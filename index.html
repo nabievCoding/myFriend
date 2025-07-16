@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-    <h1>Habibulloh</h1>
-    
+    <h1>Jonim bolam</h1>
+    <div id="map" style="height: 100%;"></div>
 </body>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="./script.js">
 const tg = window.Telegram.WebApp;
   tg.expand(); // ekran to'liq ochiladi
+    var map = L.map('map').setView([41.3111, 69.2797], 13); // Toshkent
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  L.marker([41.3111, 69.2797]).addTo(map)
+    .bindPopup('Toshkent markazi')
+    .openPopup();
 </script>
 </html>
