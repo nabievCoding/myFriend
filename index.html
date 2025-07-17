@@ -24,7 +24,13 @@
 <script>
 var map = L.map('map').setView([41.2995, 69.2401], 13);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-var marker = L.marker([41.2995, 69.2401]).addTo(map);
+// Tile layer qo'shish
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+var marker = L.marker([41.2995, 69.2401])
+    .addTo(map)
+    .bindPopup('Toshkent shahar markazi')
+    .openPopup();
 </script>
 </html>
